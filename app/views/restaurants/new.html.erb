@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light m-3 px-3">
+  <a class="navbar-brand" href="#">Menu</a>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <%= link_to "Restaurants", restaurants_path, { class: "nav-item nav-link" } %>
+    </div>
+  </div>
+</nav>
+
+<div class="container m-3">
+  <div class="row">
+    <div class="col-6">
+      <h2>New Restaurant</h2>
+      <%= simple_form_for @restaurant do |f| %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :category %>
+        <%= f.submit "Create Restaurant", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

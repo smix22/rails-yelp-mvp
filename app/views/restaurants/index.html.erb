@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light m-3 px-3">
+  <a class="navbar-brand" href="#">Menu</a>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <%= link_to "Restaurants", restaurants_path, { class: "nav-item nav-link" } %>
+      <%= link_to "+ New", new_restaurant_path, { class: "nav-item nav-link" } %>
+    </div>
+  </div>
+</nav>
+
+<div class="container m-3">
+  <div class="row">
+    <div class="col-6">
+      <h2>Restaurants</h2>
+      <% @restaurants.each do |restaurant| %>
+      <div class="card p-3 my-3">
+        <h3><%= restaurant.name %></h3>
+        <p><%= restaurant.category %> cuisine</p>
+        <div><%= link_to "See more", restaurant_path(restaurant), { class: "btn btn-primary" } %></div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
